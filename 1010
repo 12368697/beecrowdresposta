@@ -1,0 +1,22 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+const array = lines.map((item=>{
+    return item.split(' ')
+}))
+
+const [prod1, prod2] = array.map((item)=>item)
+
+
+const [cod1,qtdeCod1,priceCod1] = prod1.map((item)=>parseFloat(item))
+
+
+const [cod2,qtdeProdCod2,priceCod2] = prod2.map((item)=>parseFloat(item))
+
+
+
+const result = (qtdeCod1*priceCod1) + (qtdeProdCod2*priceCod2)
+
+
+
+console.log('VALOR A PAGAR: R$ '+result.toFixed(2))
